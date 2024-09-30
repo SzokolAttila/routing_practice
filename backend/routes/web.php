@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\SiteController;
@@ -14,3 +15,5 @@ Route::get('idezetek/harry-potter/{slug}', [QuoteController::class, "harryPotter
 Route::get('naptar/ma', [CalendarController::class, "today"])->name("calendar.today");
 Route::get('naptar/tegnap', [CalendarController::class, "yesterday"])->name("calendar.yesterday");
 Route::get('naptar/holnap', [CalendarController::class, "tomorrow"])->name("calendar.tomorrow");
+Route::get('szamologep/{a}{operator}{b}', [CalculatorController::class, "result"])->name("calculator.result")
+    ->where(["a" => "[0-9]+", "b" => "[0-9]+", "operator" => "[\*\+\-\/]"]);

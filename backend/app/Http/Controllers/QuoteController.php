@@ -57,7 +57,7 @@ class QuoteController extends Controller
                 ]);
                 break;
             default:
-                return view(404);
+                return abort(404);
                 break;
         }
    
