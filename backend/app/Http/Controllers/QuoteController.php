@@ -38,4 +38,28 @@ class QuoteController extends Controller
             "name" => "Lali"
         ]);
     }
+    public function harryPotter($slug){
+        switch ($slug) {
+            case 'fred-es-george':
+                return view("quote.show", 
+                [
+                    "title" => "Harry Potter", 
+                    "quote" => "- Mindig is tudtuk hol a határ - bólintott Fred - És csak óvatosan léptük át - tette hozzá George.", 
+                    "name" => "Fred és George"
+                ]);
+                break;
+            case "hermione":
+                return view("quote.show", 
+                [
+                    "title" => "Harry Potter", 
+                    "quote" => "Még egy ilyen remek ötlet, és mindhárman meghalunk, vagy akár ki is csaphatnak!", 
+                    "name" => "Hermione"
+                ]);
+                break;
+            default:
+                return view(404);
+                break;
+        }
+   
+    }
 }
