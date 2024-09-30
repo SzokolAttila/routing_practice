@@ -14,4 +14,12 @@ class QuoteController extends Controller
             "name" => "Dr. House"
         ]);
     }
+    public function modernFamily(){
+        return view("quote.show", 
+        [
+            "title" => "Modern Család", 
+            "quote" => "A siker mindig 1 százalék ihlet, plusz 98 százalék verejték, végül pedig 2 százalék odafigyelés.", 
+            "name" => "Phil Dunphy"
+        ]);
+    }
 }
