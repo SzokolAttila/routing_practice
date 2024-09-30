@@ -9,8 +9,6 @@ class CalculatorController extends Controller
     public function result($a, $operator, $b){
         if($operator == "/" && $b == 0)
             return abort(400);
-        $result;
-        $title;
         switch($operator){
             case "/":
                 $title = "Osztas";
